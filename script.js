@@ -1,4 +1,4 @@
-const clickSound = new Audio("./sounds/click.wav");
+const clickSound = new Audio("./click.wav");
 
 let startBtn = document.querySelector("#startBtn");
 let timeDisplay = document.querySelector("#timeDisplay");
