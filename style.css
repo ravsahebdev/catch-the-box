@@ -168,17 +168,17 @@
         @media (max-width: 600px) {
             body {
                 align-items: flex-start;
-                padding: 12px;
+                padding: 10px;
             }
 
             .game {
-                padding: 16px 16px 20px;
-                border-radius: 24px;
+                padding: 12px 10px 20px;
+                border-radius: 14px;
             }
 
             .playground {
                 height: 380px;
-                border-width: 3px;
+                border-width: 3px; 
             }
 
             .card {
@@ -218,13 +218,13 @@
 
         @media (max-width: 420px) {
             .playground {
-                height: 330px;
+                height: 65vh;
             }
 
             .box {
                 width: 46px;
                 height: 46px;
-                border-radius: 12px;
+                border-radius: 10px;
             }
 
             .card h2 {
