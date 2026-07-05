@@ -1,0 +1,233 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(145deg, #1e1e2f, #2a2a40);
+            padding: 20px;
+            margin: 0;
+        }
+
+        .game {
+            width: 540px;
+            max-width: 100%;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            border-radius: 32px;
+            padding: 22px 22px 28px;
+            box-shadow: 0 25px 40px -10px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: 0.25s;
+        }
+
+        .top {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .card {
+            flex: 1;
+            background: #f8faff;
+            border-radius: 20px;
+            padding: 16px 10px 12px;
+            text-align: center;
+            box-shadow: inset 0 -3px 0 #d0d7e6, 0 8px 18px rgba(0, 0, 0, 0.2);
+            transition: 0.2s;
+        }
+
+        .card p {
+            color: #4a4f62;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .card h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: #0b0e1a;
+            line-height: 1.2;
+        }
+
+        .playground {
+            width: 100%;
+            height: 440px;
+            background: #f2f6fe;
+            border-radius: 24px;
+            border: 4px solid #1f2336;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 2px #4b516e, 0 12px 28px rgba(0, 0, 0, 0.5);
+            transition: border-color 0.2s;
+            touch-action: none;
+        }
+
+        .box {
+            width: 64px;
+            height: 64px;
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #d03131);
+            border-radius: 16px;
+            cursor: pointer;
+            box-shadow: 0 8px 0 #911f1f, 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: 0.08s linear;
+            will-change: transform, left, top;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: rgba(255, 255, 255, 0.3);
+            transform: rotate(2deg);
+        }
+
+        .box:active {
+            transform: scale(0.88) rotate(0deg);
+            transition: 0.04s;
+        }
+
+        @media (hover: hover) {
+            .box:hover {
+                filter: brightness(1.15);
+                transform: scale(1.05) rotate(1deg);
+                transition: 0.12s;
+            }
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(8, 8, 20, 0.82);
+            backdrop-filter: blur(6px);
+            color: #f0f3ff;
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            border-radius: 20px;
+            gap: 8px;
+        }
+
+        .overlay div {
+            font-size: 20px;
+            font-weight: 400;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .buttons button {
+            flex: 1;
+            padding: 16px 10px;
+            border: none;
+            border-radius: 60px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #fff;
+            background: #2a2f47;
+            box-shadow: 0 8px 0 #131624, 0 6px 16px rgba(0, 0, 0, 0.3);
+            transition: 0.2s linear;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .buttons button:active {
+            transform: translateY(5px);
+            box-shadow: 0 3px 0 #131624;
+        }
+
+        .buttons button:first-child {
+            background: #3b4b8a;
+            box-shadow: 0 8px 0 #1f2a54;
+        }
+
+        .buttons button:first-child:active {
+            box-shadow: 0 3px 0 #1f2a54;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding: 12px;
+            }
+
+            .game {
+                padding: 16px 16px 20px;
+                border-radius: 24px;
+            }
+
+            .playground {
+                height: 380px;
+                border-width: 3px;
+            }
+
+            .card {
+                padding: 12px 6px 10px;
+            }
+
+            .card h2 {
+                font-size: 28px;
+            }
+
+            .card p {
+                font-size: 12px;
+            }
+
+            .box {
+                width: 52px;
+                height: 52px;
+                border-radius: 14px;
+                font-size: 20px;
+            }
+
+            .overlay {
+                font-size: 32px;
+                border-radius: 20px;
+            }
+
+            .overlay span {
+                font-size: 16px;
+            }
+
+            .buttons button {
+                font-size: 15px;
+                padding: 14px 8px;
+                border-radius: 40px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .playground {
+                height: 330px;
+            }
+
+            .box {
+                width: 46px;
+                height: 46px;
+                border-radius: 12px;
+            }
+
+            .card h2 {
+                font-size: 24px;
+            }
+        }
